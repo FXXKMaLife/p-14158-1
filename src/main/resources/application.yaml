@@ -6,12 +6,20 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
+  output:
+    ansi:
+      enabled: always
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true #sql을 보여줄때 보기 쉽게 표시해줌
         highlight_sql: true #색을 입혀서 보기 편하게 해줌
         use_sql_comments: true #jpa가 설명도 붙여줌
+
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: TRACE #?로 표기되는 것에 값을 넣어서 보여줌
+    org.hibernate.orm.jdbc.extract: TRACE #쿼리의 결과를 보여줌

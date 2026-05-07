@@ -17,16 +17,13 @@ public class BaseInitData {
         return args -> {
             if(postRepository.count() > 0) return;//데이터가 있는지 물어봄 있으면 Early return
 
+            /*  content를 추가했으니 컨텐트에 넣을것을 추가하자
             Post post1 = new Post();
             post1.setTitle("제목 1");
-
-            postRepository.save(post1);
-
-            //postRepository.count(); //SELECT COUNT(*) FROM post;
-            Post post2 = new Post();
-            post2.setTitle("제목 2");
-
-            postRepository.save(post2);//INSERT INTO post SET title = '제목 1';
+             postRepository.save(post1);
+             */
+            Post post1 = postRepository.save(new Post("제목 1", "내용 1"));
+            Post post2 = postRepository.save(new Post("제목 2", "내용 2"));
 
             System.out.println("기본 데이터가 초기화되었ㅅㅂ니다.");
         };
