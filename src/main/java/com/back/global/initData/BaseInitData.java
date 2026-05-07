@@ -24,7 +24,7 @@ public class BaseInitData {
 
             //postRepository.count(); //SELECT COUNT(*) FROM post;
             Post post2 = new Post();
-            post2.setTitle("제목 1");
+            post2.setTitle("제목 2");
 
             postRepository.save(post2);//INSERT INTO post SET title = '제목 1';
 
